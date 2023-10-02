@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import Header from './components/Header';
+import Banner from './components/Banner';
+import Main from './components/Main';
+import { useDispatch } from 'react-redux';
+import { addCapsules, setLoading } from './Store/action';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchCapsulesData = async () => {
+      try {
+        const response = await fetch('http://localhost/bsf/frontend/api/capsules.php');
+        if (!response.ok) {
+          throw new Error('Network error occured');
+        }
+        const data = await response.json();
+        // Store data in Redux store
+        dispatch(addCapsules(data));
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally{
+        dispatch(setLoading(false))
+      }
+    };
+    fetchCapsulesData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Banner />
+      <Main />
     </div>
   );
 }
