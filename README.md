@@ -4,9 +4,17 @@
 SpaceX Capsules is a web application that allows users to explore information about SpaceX capsules. This project is built using React and integrates with the SpaceX API to fetch data about capsules. Users can filter and paginate through the capsule data to find relevant information.
 
 Watch working demo of the site on ` https://youtu.be/sz85ybgzTZs `
-![Desktop view](https://drive.google.com/file/d/1cpLYUTyvW6ma1TEL1BkVG3tzc6cze-hI/view?usp=drive_link)
-![Mobile view](https://drive.google.com/file/d/1NEuJsdVzzuPx1wwZGUjUzkcvfiYL58BC/view?usp=drive_link)
-![Popup view](https://drive.google.com/file/d/1F4anzgRdBM9ZDpgy5r-YIg_gCHt_hCgs/view?usp=drive_link)
+
+### Desdktop view
+![Desktop view](https://drive.google.com/uc?export=view&id=1cpLYUTyvW6ma1TEL1BkVG3tzc6cze-hI)
+
+### Mobile view
+
+![Mobile view](https://drive.google.com/uc?export=view&id=1NEuJsdVzzuPx1wwZGUjUzkcvfiYL58BC)
+
+### Popup view
+
+![Popup view](https://drive.google.com/uc?export=view&id=1F4anzgRdBM9ZDpgy5r-YIg_gCHt_hCgs)
 
 ## Features
 
