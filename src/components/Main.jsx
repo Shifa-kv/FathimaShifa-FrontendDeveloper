@@ -12,7 +12,6 @@ const Main = () => {
     // Calculate the staring and ending index of data on the current page
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    console.log(Capsules)
 
     // Find unique search form value from data
     const allStatus = [...new Set(Capsules.map((rocket) => rocket.status))];
@@ -114,11 +113,11 @@ const Main = () => {
                 </div>
             ):(
                 filteredCapsules.length != 0 ?
-                    <div className='grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 gap-y-9 '>
+                    <div className='grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5 gap-y-9'>
                         {filteredCapsules.slice(startIndex, endIndex).sort((a, b) => a.capsule_serial.localeCompare(b.capsule_serial)).map((data) => (
                             <article
                                 key={data.capsule_serial}
-                                className='flex even:bg-cyan-200 even:text-indigo-950 odd:text-cyan-200 odd:bg-indigo-950 flex-col border border-gray-300 shadow-xl rounded-lg overflow-hidden'
+                                className='flex cursor-pointer even:bg-cyan-200 even:text-indigo-950 odd:text-cyan-200 odd:bg-indigo-950 flex-col border border-gray-300 shadow-xl rounded-lg overflow-hidden'
                                 onClick={() => { setPopupData({ status: true, data }) }}
                             >
                                 <div className=' flex flex-col justify-center items-center p-4 '>
